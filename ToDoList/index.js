@@ -26,6 +26,12 @@ function add(todo) {
     const li = document.createElement("li");
     li.innerText = todoText;
     li.classList.add("list-group-item");
+
+    li.addEventListener("contextmenu", function (e) {
+      e.preventDefault();
+      li.remove();
+      saveData();
+    });
     ul.appendChild(li);
     input.value = "";
     saveData();
