@@ -1,2 +1,5 @@
-let hello = "helloworld"
-console.log(hello)
+const question = 'トマトはどれ？';
+const answers = [
+  'トマト', 'ピーマン', 'たまねぎ', 'レタス'
+];
+const correct = 'トマト';
