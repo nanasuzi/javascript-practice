@@ -7,20 +7,27 @@ const answers = [
 ];
 const correct = 'トマト';
 
-
-console.log(document.getElementById('js-question').textContent = question);
-
 const $button = document.getElementsByTagName('button')
+let $buttonLen = $button.length
+let buttonIndex = 0;
 
-$button[0].textContent = answers[0];
-$button[1].textContent = answers[1];
-$button[2].textContent = answers[2];
-$button[3].textContent = answers[3];
-
-$button[0].addEventListener('click', () =>{
-  if(correct === $button[0].textContent){
-    window.alert('正解')
-  } else {
-    window.alert('不正解')
+// クイズの問題文・選択肢定義
+const setUpQuiz = () =>{
+  document.getElementById('js-question').textContent = question;
+  while(buttonIndex < $buttonLen){
+    $button[buttonIndex].textContent = answers[buttonIndex];
+    buttonIndex++;
   }
-})
+}
+setUpQuiz();
+
+while(buttonIndex < $buttonLen){
+  $button[buttonIndex].addEventListener('click', (e) =>{
+    if(correct === e.target.textContent){
+      window.alert('正解')
+    } else {
+      window.alert('不正解')
+    }
+  })
+  buttonIndex++;
+}
