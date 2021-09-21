@@ -22,6 +22,8 @@ const setUpQuiz = () =>{
 setUpQuiz();
 
 //正誤判定
+
+const setUpAnsewrs = () => {
 while(buttonIndex < $buttonLen){
   $button[buttonIndex].addEventListener('click', (e) =>{
     if(correct === e.target.textContent){
@@ -32,3 +34,6 @@ while(buttonIndex < $buttonLen){
   })
   buttonIndex++;
 }
+}
+
+setUpAnsewrs();
