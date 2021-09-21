@@ -23,17 +23,18 @@ setUpQuiz();
 
 //正誤判定
 
-const setUpAnsewrs = () => {
-while(buttonIndex < $buttonLen){
-  $button[buttonIndex].addEventListener('click', (e) =>{
-    if(correct === e.target.textContent){
-      window.alert('正解')
-    } else {
-      window.alert('不正解')
-    }
-  })
-  buttonIndex++;
-}
-}
+const clickHandler = (e) => {
+  if(correct === e.target.textContent){
+    window.alert('正解')
+  } else {
+    window.alert('不正解')
+  }
+};
 
-setUpAnsewrs();
+let handlerIndex = 0;
+while (handlerIndex < $buttonLen) {
+  $button[handlerIndex].addEventListener('click', (e) => {
+    clickHandler(e);
+  });
+  handlerIndex++;
+}
