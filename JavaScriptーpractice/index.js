@@ -48,7 +48,6 @@ const setUpQuiz = () =>{
 setUpQuiz();
 
 //正誤判定
-
 const clickHandler = (e) => {
   if(quiz[quizIndex].correct === e.target.textContent){
     window.alert('正解')
@@ -66,6 +65,7 @@ const clickHandler = (e) => {
   }
 };
 
+//クリックイベント
 while (handlerIndex < $buttonLen) {
   $button[handlerIndex].addEventListener('click', (e) => {
     clickHandler(e);
