@@ -49,8 +49,22 @@
           this.x += this.speed
         }
       }
-      const block = {}
-      const level = {}
+      const block = {
+        width: null,
+        height: 20,
+        data: [],
+
+        update: function() {}
+      }
+      const level = [
+        [0,0,0,0,0,0],
+        [0,0,0,0,0,0],
+        [1,1,1,1,1,1],
+        [1,1,1,1,1,1],
+        [1,1,1,1,1,1],
+        [1,1,1,1,1,1],
+
+      ]
 
       const init = () => {
         paddle.x = canvas.width / 2 - paddle.width / 2;
@@ -60,6 +74,8 @@
         ball.y = canvas.height / 2 + 50;
         ball.dx = ball.speed;
         ball.dy = ball.speed;
+
+        
 
       }
       const collode = () => {}
