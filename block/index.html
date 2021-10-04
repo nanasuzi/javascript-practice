@@ -66,8 +66,6 @@
 
       ]
 
-
-      //初期値設定
       const init = () => {
         paddle.x = canvas.width / 2 - paddle.width / 2;
         paddle.y = canvas.height - paddle.height;
@@ -77,7 +75,9 @@
         ball.dx = ball.speed;
         ball.dy = ball.speed;
 
-        
+        for(let i=0; i<level.length; i++) {
+          
+        }
 
       }
       const collode = () => {}
