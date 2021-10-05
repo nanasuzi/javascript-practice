@@ -75,8 +75,19 @@
         ball.dx = ball.speed;
         ball.dy = ball.speed;
 
+        block.width = canvas.width / level[0].length;
+
         for(let i=0; i<level.length; i++) {
-          
+          for(let j=0; j<level[i].length; j++) {
+            if(level[i][j]) {
+              block.data.push({
+                x: block.width * j,
+                y: block.height * i,
+                width: block.width,
+                height: block.height
+              })
+            }
+          }
         }
 
       }
