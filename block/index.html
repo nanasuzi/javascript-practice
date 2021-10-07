@@ -49,6 +49,7 @@
           this.x += this.speed
         }
       }
+      //block作成
       const block = {
         width: null,
         height: 20,
@@ -103,7 +104,7 @@
         paddle.update();
         ball.update();
         block.update();
-        
+
         window.requestAnimationFrame(loop);
       }
       
