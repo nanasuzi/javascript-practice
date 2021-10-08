@@ -49,7 +49,6 @@
           this.x += this.speed
         }
       }
-      //block作成
       const block = {
         width: null,
         height: 20,
@@ -100,11 +99,9 @@
       const collode = () => {}
       const loop = () => {
         ctx.clearRect(0,0,canvas.width,canvas.height);
-
         paddle.update();
         ball.update();
         block.update();
-
         window.requestAnimationFrame(loop);
       }
       
