@@ -96,12 +96,24 @@
         }
 
       }
-      const collode = () => {}
+      const collide = (obj1, obj2) => {
+        return obj1.x < obj2.x + obj2.width &&
+               obj2.x < obj1.x + obj1.width &&
+               obj1.y < obj2.y + obj2.height &&
+               obj2.y < obj1.y + obj1.height;
+
+      }
+
       const loop = () => {
         ctx.clearRect(0,0,canvas.width,canvas.height);
         paddle.update();
         ball.update();
         block.update();
+
+        if(collide(ball, paddle)) {
+          ball.dy *= - 1;
+        }
+
         window.requestAnimationFrame(loop);
       }
       
