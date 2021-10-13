@@ -112,7 +112,15 @@
 
         if(collide(ball, paddle)) {
           ball.dy *= - 1;
+          ball.y = paddle.y - ball.height;
         }
+
+        block.data.forEach((brick, index) => {
+          if(collide(ball, brick)) {
+            ball.dy *= -1;
+            block.data.splice(index, 1);
+          }
+        })
 
         window.requestAnimationFrame(loop);
       }
